@@ -32,8 +32,8 @@ if(updateUserForm){
         const user = {}
         heads.forEach(h=> user[h]= updateUserForm.elements[h].value)
         const data = readDataFromStorage()
-        data.forEach(e=> e !== user && console.log(e,user))
-        // writeDataToStorage(data)
+        // some code to update
+        writeDataToStorage(data)
     })
 }
 
@@ -88,10 +88,3 @@ const deleteUser = (btn) => {
     localStorage.setItem("user", JSON.stringify(userStorage));
     el.remove();
   };
-
-
-const o1={username: 'khaled1', phone: '22222221222', age: '111', active: 'on'} 
-const o2={username: 'khaled', phone: '2222222222', age: '11', active: 'on'}
-for(i,v in o1,o2){
-    console.log(o1[i]===o2[v])
-}
